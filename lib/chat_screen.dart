@@ -21,8 +21,10 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   void initState() {
     super.initState();
-    // channel = IOWebSocketChannel.connect('ws://lcalmachine ip:8080'); // here will come the IP of your server or your lcalmachine ip with port 8080
 
+    // channel = IOWebSocketChannel.connect('ws://192.168.1.43:8080'); // Replace with server IP
+
+    channel = IOWebSocketChannel.connect('wss://websocket-chatapp-server-5dsh.onrender.com'); // hosted server
 
     // Register user on connection
     channel.sink.add(jsonEncode({
